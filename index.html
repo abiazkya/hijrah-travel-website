@@ -6,25 +6,23 @@
     <title>Hijrah Travel - Perjalanan Umroh & Haji Berkualitas</title>
     <meta name="description" content="Hijrah Travel - Paket Umroh & Haji terbaik dengan fasilitas premium, guide berpengalaman, dan itinerary terstruktur.">
     
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
-    
-    <!-- AOS Animation -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --primary: #0C6B3A;
-            --primary-dark: #084D2A;
-            --secondary: #D4AF37;
-            --gold: #F4D03F;
-            --dark: #1a1a2e;
-            --darker: #0f0f1a;
-            --white: #ffffff;
-            --gray: #f5f5f5;
-            --text: #333333;
+            --primary: #0B5D34;
+            --primary-dark: #083D25;
+            --gold: #C9A84C;
+            --gold-light: #D4B85A;
+            --dark: #1C1C1E;
+            --darker: #111113;
+            --white: #FAFAFA;
+            --gray-light: #F4F4F4;
+            --gray: #E8E8E8;
+            --text: #2C2C2C;
+            --text-muted: #6B6B6B;
         }
 
         * {
@@ -38,99 +36,103 @@
         }
 
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
             color: var(--text);
             line-height: 1.6;
-            overflow-x: hidden;
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
         }
 
         /* NAVBAR */
         .navbar {
             position: fixed;
             top: 0;
-            width: 100%;
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-            transition: all 0.3s ease;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            transition: background 0.3s, box-shadow 0.3s, padding 0.3s;
             background: transparent;
+            padding: 20px 5%;
         }
 
         .navbar.scrolled {
-            background: rgba(12, 107, 58, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 10px 5%;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            background: rgba(11, 93, 52, 0.97);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.15);
+            padding: 12px 5%;
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            text-decoration: none;
             color: var(--white);
-            font-family: 'Amiri', serif;
-            font-size: 1.8rem;
-            font-weight: 700;
         }
 
         .logo-icon {
-            width: 45px;
-            height: 45px;
-            background: var(--secondary);
+            width: 42px;
+            height: 42px;
+            background: var(--gold);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.4rem;
+        }
+
+        .logo-icon svg {
+            width: 22px;
+            height: 22px;
+            fill: var(--dark);
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
         }
 
         .nav-links {
             display: flex;
-            gap: 30px;
+            align-items: center;
+            gap: 32px;
             list-style: none;
         }
 
         .nav-links a {
-            color: var(--white);
+            color: rgba(255,255,255,0.9);
             text-decoration: none;
-            font-weight: 500;
             font-size: 0.95rem;
-            transition: color 0.3s;
-            position: relative;
+            font-weight: 500;
+            letter-spacing: 0.01em;
+            transition: color 0.2s;
         }
 
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--secondary);
-            transition: width 0.3s;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
+        .nav-links a:hover {
+            color: var(--gold);
         }
 
         .nav-cta {
-            background: var(--secondary);
+            background: var(--gold);
             color: var(--dark) !important;
-            padding: 10px 25px;
-            border-radius: 30px;
+            padding: 10px 24px;
+            border-radius: 6px;
             font-weight: 600 !important;
+            transition: background 0.2s, transform 0.2s !important;
         }
 
         .nav-cta:hover {
-            background: var(--gold);
-            transform: scale(1.05);
-        }
-
-        .nav-cta::after {
-            display: none !important;
+            background: var(--gold-light);
+            transform: translateY(-1px);
         }
 
         .hamburger {
@@ -138,25 +140,69 @@
             flex-direction: column;
             gap: 5px;
             cursor: pointer;
+            padding: 4px;
+            background: none;
+            border: none;
         }
 
         .hamburger span {
-            width: 25px;
-            height: 3px;
+            display: block;
+            width: 24px;
+            height: 2px;
             background: var(--white);
-            border-radius: 3px;
+            border-radius: 2px;
             transition: 0.3s;
+        }
+
+        /* MOBILE NAV */
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: var(--primary-dark);
+            z-index: 99;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 28px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .mobile-nav.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .mobile-nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 1.4rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+
+        .mobile-nav-close {
+            position: absolute;
+            top: 20px;
+            right: 5%;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 8px;
+            line-height: 1;
         }
 
         /* HERO */
         .hero {
             min-height: 100vh;
-            background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 50%, var(--primary-dark) 100%);
+            min-height: 100dvh;
+            background: linear-gradient(160deg, var(--darker) 0%, var(--dark) 40%, var(--primary-dark) 100%);
             display: flex;
             align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 0 5%;
+            padding: 120px 5% 80px;
             position: relative;
             overflow: hidden;
         }
@@ -164,121 +210,105 @@
         .hero::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
-            animation: rotate 30s linear infinite;
-        }
-
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+            top: -30%;
+            right: -20%;
+            width: 70%;
+            height: 140%;
+            background: radial-gradient(ellipse, rgba(201,168,76,0.08) 0%, transparent 65%);
+            pointer-events: none;
         }
 
         .hero-content {
-            position: relative;
-            z-index: 2;
             max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
         }
 
         .hero-badge {
             display: inline-block;
-            background: rgba(212, 175, 55, 0.2);
-            border: 1px solid var(--secondary);
-            color: var(--secondary);
+            border: 1px solid rgba(201,168,76,0.5);
+            color: var(--gold);
             padding: 8px 20px;
-            border-radius: 30px;
-            font-size: 0.85rem;
-            margin-bottom: 25px;
-            animation: fadeInDown 1s ease;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 28px;
+            background: rgba(201,168,76,0.06);
         }
 
         .hero h1 {
-            font-family: 'Amiri', serif;
-            font-size: 4rem;
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
             color: var(--white);
-            margin-bottom: 20px;
             line-height: 1.2;
-            animation: fadeInUp 1s ease;
+            margin-bottom: 20px;
+            font-weight: 700;
         }
 
         .hero h1 span {
-            color: var(--secondary);
+            color: var(--gold);
         }
 
-        .hero p {
-            color: rgba(255,255,255,0.8);
-            font-size: 1.2rem;
-            margin-bottom: 35px;
-            animation: fadeInUp 1s ease 0.2s both;
+        .hero-sub {
+            color: rgba(255,255,255,0.75);
+            font-size: clamp(1rem, 2vw, 1.15rem);
+            max-width: 620px;
+            margin: 0 auto 36px;
+            line-height: 1.7;
         }
 
-        .hero-buttons {
+        .hero-actions {
             display: flex;
-            gap: 20px;
+            gap: 16px;
             justify-content: center;
             flex-wrap: wrap;
-            animation: fadeInUp 1s ease 0.4s both;
+            margin-bottom: 64px;
         }
 
         .btn {
-            padding: 15px 35px;
-            border-radius: 50px;
-            font-size: 1rem;
+            padding: 14px 32px;
+            border-radius: 6px;
+            font-size: 0.95rem;
             font-weight: 600;
             text-decoration: none;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
+            transition: all 0.25s;
+            display: inline-block;
+            letter-spacing: 0.01em;
+            cursor: pointer;
+            border: none;
         }
 
         .btn-primary {
-            background: var(--primary);
-            color: var(--white);
-            border: 2px solid var(--primary);
+            background: var(--gold);
+            color: var(--dark);
         }
 
         .btn-primary:hover {
-            background: var(--primary-dark);
-            border-color: var(--primary-dark);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(12, 107, 58, 0.4);
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(201,168,76,0.25);
         }
 
         .btn-outline {
             background: transparent;
             color: var(--white);
-            border: 2px solid var(--white);
+            border: 1.5px solid rgba(255,255,255,0.4);
         }
 
         .btn-outline:hover {
-            background: var(--white);
-            color: var(--dark);
-            transform: translateY(-3px);
-        }
-
-        .btn-gold {
-            background: var(--secondary);
-            color: var(--dark);
-            border: 2px solid var(--secondary);
-        }
-
-        .btn-gold:hover {
-            background: var(--gold);
-            border-color: var(--gold);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+            background: rgba(255,255,255,0.08);
+            border-color: rgba(255,255,255,0.7);
+            transform: translateY(-2px);
         }
 
         .hero-stats {
             display: flex;
             justify-content: center;
-            gap: 50px;
-            margin-top: 60px;
-            animation: fadeInUp 1s ease 0.6s both;
+            gap: clamp(32px, 6vw, 64px);
         }
 
         .stat {
@@ -286,99 +316,114 @@
         }
 
         .stat-number {
-            font-size: 2.5rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
             font-weight: 700;
-            color: var(--secondary);
+            color: var(--gold);
+            line-height: 1;
         }
 
         .stat-label {
-            color: rgba(255,255,255,0.7);
-            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+            font-size: 0.85rem;
+            margin-top: 6px;
+            letter-spacing: 0.02em;
         }
 
-        /* SECTION COMMON */
+        /* SECTION */
         section {
-            padding: 100px 5%;
+            padding: 80px 5%;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 52px;
         }
 
-        .section-badge {
+        .section-label {
             display: inline-block;
-            background: rgba(12, 107, 58, 0.1);
             color: var(--primary);
-            padding: 6px 15px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 15px;
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 12px;
         }
 
         .section-title {
-            font-size: 2.8rem;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
             color: var(--dark);
-            margin-bottom: 15px;
+            margin-bottom: 14px;
             font-weight: 700;
+            line-height: 1.25;
         }
 
-        .section-subtitle {
-            color: #666;
-            font-size: 1.1rem;
-            max-width: 600px;
+        .section-sub {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            max-width: 560px;
             margin: 0 auto;
         }
 
         /* FEATURES */
         .features {
-            background: var(--gray);
+            background: var(--gray-light);
         }
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
         .feature-card {
             background: var(--white);
-            padding: 35px;
-            border-radius: 20px;
-            text-align: center;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            padding: 28px 24px;
+            border-radius: 8px;
+            border: 1px solid var(--gray);
+            transition: transform 0.25s, box-shadow 0.25s;
         }
 
         .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.08);
         }
 
         .feature-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            border-radius: 20px;
+            width: 52px;
+            height: 52px;
+            background: rgba(11,93,52,0.08);
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 2rem;
+            margin-bottom: 18px;
+        }
+
+        .feature-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--primary);
+            fill: none;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
 
         .feature-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 12px;
+            font-size: 1.05rem;
+            font-weight: 700;
             color: var(--dark);
+            margin-bottom: 10px;
         }
 
         .feature-card p {
-            color: #666;
-            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-size: 0.92rem;
+            line-height: 1.65;
         }
 
         /* PACKAGES */
@@ -388,102 +433,159 @@
 
         .packages-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
         .package-card {
             background: var(--white);
-            border-radius: 25px;
+            border-radius: 10px;
+            border: 1px solid var(--gray);
             overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
+            transition: transform 0.25s, box-shadow 0.25s;
             position: relative;
         }
 
         .package-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.1);
         }
 
         .package-card.featured {
-            border: 3px solid var(--secondary);
+            border-color: var(--gold);
+            border-width: 2px;
         }
 
         .package-badge {
             position: absolute;
-            top: 20px;
-            right: 20px;
-            background: var(--secondary);
+            top: 16px;
+            right: 16px;
+            background: var(--gold);
             color: var(--dark);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.75rem;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.7rem;
             font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
         }
 
         .package-header {
             background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            padding: 30px;
-            text-align: center;
+            padding: 28px 24px;
             color: var(--white);
         }
 
         .package-type {
-            font-size: 0.85rem;
-            opacity: 0.8;
-            margin-bottom: 5px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            opacity: 0.75;
+            margin-bottom: 4px;
         }
 
         .package-name {
-            font-family: 'Amiri', serif;
-            font-size: 1.8rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
         }
 
         .package-price {
-            margin-top: 15px;
+            margin-top: 14px;
         }
 
         .price-from {
-            font-size: 0.85rem;
-            opacity: 0.8;
+            font-size: 0.78rem;
+            opacity: 0.7;
         }
 
         .price-value {
-            font-size: 2rem;
+            font-size: 1.6rem;
             font-weight: 700;
-            color: var(--secondary);
+            color: var(--gold);
         }
 
         .package-body {
-            padding: 30px;
+            padding: 24px;
         }
 
         .package-features {
             list-style: none;
-            margin-bottom: 25px;
+            margin-bottom: 24px;
         }
 
         .package-features li {
-            padding: 10px 0;
+            padding: 8px 0;
             display: flex;
             align-items: center;
             gap: 10px;
-            color: #555;
-            font-size: 0.95rem;
+            color: var(--text);
+            font-size: 0.92rem;
         }
 
         .package-features li::before {
-            content: '✓';
-            color: var(--primary);
-            font-weight: 700;
+            content: '';
+            width: 18px;
+            height: 18px;
+            background: rgba(11,93,52,0.1);
+            border-radius: 50%;
+            flex-shrink: 0;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230B5D34' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+            background-size: 10px;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         .package-card .btn {
             width: 100%;
-            justify-content: center;
+            text-align: center;
+        }
+
+        /* GALLERY */
+        .gallery {
+            background: var(--gray-light);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            height: 220px;
+            position: relative;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s;
+            display: block;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-item .overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 16px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: var(--white);
+            font-size: 0.85rem;
+            font-weight: 500;
         }
 
         /* TESTIMONIALS */
@@ -492,51 +594,52 @@
             color: var(--white);
         }
 
-        .testimonials .section-badge {
-            background: rgba(212, 175, 55, 0.2);
-            color: var(--secondary);
+        .testimonials .section-label {
+            color: var(--gold);
         }
 
         .testimonials .section-title {
             color: var(--white);
         }
 
-        .testimonials .section-subtitle {
-            color: rgba(255,255,255,0.7);
+        .testimonials .section-sub {
+            color: rgba(255,255,255,0.55);
         }
 
         .testimonials-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
         .testimonial-card {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 20px;
-            padding: 30px;
-            transition: all 0.3s ease;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 10px;
+            padding: 28px;
+            transition: background 0.25s, transform 0.25s;
         }
 
         .testimonial-card:hover {
-            background: rgba(255,255,255,0.1);
-            transform: translateY(-5px);
+            background: rgba(255,255,255,0.07);
+            transform: translateY(-3px);
         }
 
         .testimonial-stars {
-            color: var(--secondary);
-            margin-bottom: 15px;
-            font-size: 1.1rem;
+            color: var(--gold);
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
         }
 
         .testimonial-text {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.95rem;
+            line-height: 1.75;
+            margin-bottom: 22px;
             font-style: italic;
-            color: rgba(255,255,255,0.85);
-            margin-bottom: 20px;
-            line-height: 1.7;
         }
 
         .testimonial-author {
@@ -546,89 +649,27 @@
         }
 
         .author-avatar {
-            width: 50px;
-            height: 50px;
+            width: 44px;
+            height: 44px;
             background: var(--primary);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            font-size: 1.2rem;
+            font-size: 0.95rem;
+            flex-shrink: 0;
         }
 
         .author-info h4 {
-            font-size: 1rem;
-            margin-bottom: 3px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 2px;
         }
 
         .author-info p {
-            font-size: 0.85rem;
-            color: rgba(255,255,255,0.6);
-        }
-
-        /* CTA */
-        .cta {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            text-align: center;
-            padding: 80px 5%;
-        }
-
-        .cta h2 {
-            font-family: 'Amiri', serif;
-            font-size: 2.5rem;
-            color: var(--white);
-            margin-bottom: 15px;
-        }
-
-        .cta p {
-            color: rgba(255,255,255,0.85);
-            font-size: 1.1rem;
-            margin-bottom: 30px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* GALLERY */
-        .gallery {
-            background: var(--gray);
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .gallery-item {
-            border-radius: 15px;
-            overflow: hidden;
-            height: 250px;
-            position: relative;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .gallery-item .overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 20px;
-            background: linear-gradient(transparent, rgba(0,0,0,0.8));
-            color: var(--white);
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.45);
         }
 
         /* FAQ */
@@ -637,98 +678,139 @@
         }
 
         .faq-list {
-            max-width: 800px;
+            max-width: 720px;
             margin: 0 auto;
         }
 
         .faq-item {
-            border-bottom: 1px solid #eee;
-            padding: 20px 0;
+            border-bottom: 1px solid var(--gray);
         }
 
         .faq-question {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 20px 0;
             cursor: pointer;
             font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: var(--dark);
+            gap: 16px;
+            background: none;
+            border: none;
+            width: 100%;
+            text-align: left;
         }
 
-        .faq-question span {
+        .faq-question:hover {
+            color: var(--primary);
+        }
+
+        .faq-toggle {
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: var(--text-muted);
+            flex-shrink: 0;
             transition: transform 0.3s;
         }
 
-        .faq-item.active .faq-question span {
+        .faq-item.active .faq-toggle {
             transform: rotate(45deg);
         }
 
         .faq-answer {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease, padding 0.3s ease;
-            color: #666;
+            transition: max-height 0.35s ease, padding 0.35s ease;
+            color: var(--text-muted);
             line-height: 1.7;
+            font-size: 0.95rem;
         }
 
         .faq-item.active .faq-answer {
-            max-height: 200px;
-            padding-top: 15px;
+            max-height: 250px;
+            padding-bottom: 20px;
+        }
+
+        /* CTA */
+        .cta {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            text-align: center;
+            padding: 72px 5%;
+        }
+
+        .cta h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+            color: var(--white);
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+            color: rgba(255,255,255,0.8);
+            font-size: 1rem;
+            margin-bottom: 28px;
+            max-width: 520px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* FOOTER */
         .footer {
             background: var(--darker);
-            color: var(--white);
-            padding: 60px 5% 30px;
+            color: rgba(255,255,255,0.65);
+            padding: 52px 5% 28px;
         }
 
         .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            max-width: 1200px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 36px;
+            max-width: 1100px;
             margin: 0 auto 40px;
         }
 
         .footer-brand .logo {
-            margin-bottom: 15px;
+            margin-bottom: 14px;
         }
 
         .footer-brand p {
-            color: rgba(255,255,255,0.7);
-            font-size: 0.95rem;
-            margin-bottom: 20px;
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.5);
         }
 
         .footer-social {
             display: flex;
             gap: 10px;
+            margin-top: 16px;
         }
 
         .footer-social a {
-            width: 40px;
-            height: 40px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            background: rgba(255,255,255,0.07);
+            border-radius: 6px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--white);
+            color: rgba(255,255,255,0.6);
             text-decoration: none;
-            transition: all 0.3s;
+            transition: background 0.2s, color 0.2s;
         }
 
         .footer-social a:hover {
-            background: var(--secondary);
+            background: var(--gold);
             color: var(--dark);
         }
 
         .footer-links h4 {
-            color: var(--secondary);
-            margin-bottom: 20px;
-            font-size: 1.1rem;
+            color: var(--gold);
+            margin-bottom: 16px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
         }
 
         .footer-links ul {
@@ -736,85 +818,77 @@
         }
 
         .footer-links li {
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .footer-links a {
-            color: rgba(255,255,255,0.7);
+            color: rgba(255,255,255,0.55);
             text-decoration: none;
-            transition: color 0.3s;
+            font-size: 0.9rem;
+            transition: color 0.2s;
         }
 
         .footer-links a:hover {
-            color: var(--secondary);
+            color: var(--gold);
+        }
+
+        .footer-contact h4 {
+            color: var(--gold);
+            margin-bottom: 16px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
         }
 
         .footer-contact p {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 10px;
-            color: rgba(255,255,255,0.7);
-            margin-bottom: 12px;
-            font-size: 0.95rem;
+            margin-bottom: 10px;
+            font-size: 0.88rem;
+            color: rgba(255,255,255,0.55);
         }
 
         .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 25px;
+            border-top: 1px solid rgba(255,255,255,0.07);
+            padding-top: 22px;
             text-align: center;
-            color: rgba(255,255,255,0.5);
-            font-size: 0.9rem;
+            font-size: 0.82rem;
+            color: rgba(255,255,255,0.35);
+            max-width: 1100px;
+            margin: 0 auto;
         }
 
         /* WHATSAPP FLOAT */
         .whatsapp-float {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 60px;
-            height: 60px;
+            bottom: 28px;
+            right: 28px;
+            width: 54px;
+            height: 54px;
             background: #25D366;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 1.8rem;
-            text-decoration: none;
-            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4);
-            z-index: 999;
-            transition: all 0.3s;
+            z-index: 50;
+            box-shadow: 0 4px 16px rgba(37,211,102,0.35);
+            transition: transform 0.25s, box-shadow 0.25s;
         }
 
         .whatsapp-float:hover {
-            transform: scale(1.1);
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5);
+            transform: scale(1.08);
+            box-shadow: 0 6px 24px rgba(37,211,102,0.45);
         }
 
-        /* ANIMATIONS */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .whatsapp-float svg {
+            width: 26px;
+            height: 26px;
+            fill: white;
         }
 
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* MOBILE */
+        /* RESPONSIVE */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -824,109 +898,93 @@
                 display: flex;
             }
 
-            .hero h1 {
-                font-size: 2.5rem;
+            .hero {
+                padding: 100px 5% 60px;
+                min-height: auto;
             }
 
-            .hero p {
-                font-size: 1rem;
+            .hero h1 {
+                font-size: 2rem;
             }
 
             .hero-stats {
-                flex-direction: column;
-                gap: 20px;
+                gap: 24px;
             }
 
-            .section-title {
-                font-size: 2rem;
+            .stat-number {
+                font-size: 1.8rem;
             }
 
             .packages-grid,
             .testimonials-grid,
-            .features-grid {
+            .features-grid,
+            .gallery-grid {
                 grid-template-columns: 1fr;
             }
         }
 
-        /* MOBILE NAV */
-        .mobile-nav {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background: rgba(12, 107, 58, 0.98);
-            z-index: 999;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 30px;
-        }
+        @media (max-width: 480px) {
+            .hero-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
 
-        .mobile-nav.active {
-            display: flex;
-        }
+            .hero-actions .btn {
+                text-align: center;
+            }
 
-        .mobile-nav a {
-            color: var(--white);
-            text-decoration: none;
-            font-size: 1.5rem;
-            font-weight: 600;
-        }
-
-        .mobile-nav-close {
-            position: absolute;
-            top: 20px;
-            right: 5%;
-            color: var(--white);
-            font-size: 2rem;
-            cursor: pointer;
+            section {
+                padding: 60px 5%;
+            }
         }
     </style>
 </head>
 <body>
     <!-- NAVBAR -->
     <nav class="navbar" id="navbar">
-        <div class="logo">
-            <div class="logo-icon">🕋</div>
-            Hijrah Travel
-        </div>
-        <ul class="nav-links">
-            <li><a href="#beranda">Beranda</a></li>
-            <li><a href="#fitur">Keunggulan</a></li>
-            <li><a href="#paket">Paket</a></li>
-            <li><a href="#galeri">Galeri</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#kontak" class="nav-cta">Hubungi Kami</a></li>
-        </ul>
-        <div class="hamburger" onclick="toggleMobileNav()">
-            <span></span>
-            <span></span>
-            <span></span>
+        <div class="nav-inner">
+            <a href="#beranda" class="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 2L2 8v12h20V8L12 2z"/><path d="M12 6v14M7 10v6M17 10v6"/></svg>
+                </div>
+                <span class="logo-text">Hijrah Travel</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#beranda">Beranda</a></li>
+                <li><a href="#fitur">Keunggulan</a></li>
+                <li><a href="#paket">Paket</a></li>
+                <li><a href="#galeri">Galeri</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#kontak" class="nav-cta">Hubungi Kami</a></li>
+            </ul>
+            <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </nav>
 
     <!-- MOBILE NAV -->
     <div class="mobile-nav" id="mobileNav">
-        <span class="mobile-nav-close" onclick="toggleMobileNav()">✕</span>
-        <a href="#beranda" onclick="toggleMobileNav()">Beranda</a>
-        <a href="#fitur" onclick="toggleMobileNav()">Keunggulan</a>
-        <a href="#paket" onclick="toggleMobileNav()">Paket</a>
-        <a href="#galeri" onclick="toggleMobileNav()">Galeri</a>
-        <a href="#faq" onclick="toggleMobileNav()">FAQ</a>
-        <a href="#kontak" onclick="toggleMobileNav()">Hubungi Kami</a>
+        <button class="mobile-nav-close" id="mobileNavClose" aria-label="Tutup">x</button>
+        <a href="#beranda" onclick="closeMobileNav()">Beranda</a>
+        <a href="#fitur" onclick="closeMobileNav()">Keunggulan</a>
+        <a href="#paket" onclick="closeMobileNav()">Paket</a>
+        <a href="#galeri" onclick="closeMobileNav()">Galeri</a>
+        <a href="#faq" onclick="closeMobileNav()">FAQ</a>
+        <a href="#kontak" onclick="closeMobileNav()">Hubungi Kami</a>
     </div>
 
     <!-- HERO -->
     <section class="hero" id="beranda">
         <div class="hero-content">
-            <div class="hero-badge">✨ Trusted Travel Umroh منذ 2015</div>
+            <div class="hero-badge">Trusted Travel Umroh Sejak 2015</div>
             <h1>Wujudkan <span>Impian Ibadah</span> Anda Bersama Kami</h1>
-            <p>Melayani perjalanan umroh dan haji dengan fasilitas premium, guide berpengalaman, dan itinerary terstruktur untuk pengalaman spiritual yang tak terlupakan</p>
-            <div class="hero-buttons">
-                <a href="#paket" class="btn btn-gold">🏆 Lihat Paket Umroh</a>
-                <a href="#kontak" class="btn btn-outline">📞 Konsultasi Gratis</a>
+            <p class="hero-sub">Melayani perjalanan umroh dan haji dengan fasilitas premium, guide berpengalaman, dan itinerary terstruktur untuk pengalaman spiritual yang tak terlupakan.</p>
+            <div class="hero-actions">
+                <a href="#paket" class="btn btn-primary">Lihat Paket Umroh</a>
+                <a href="#kontak" class="btn btn-outline">Konsultasi Gratis</a>
             </div>
             <div class="hero-stats">
                 <div class="stat">
@@ -948,40 +1006,52 @@
     <!-- FEATURES -->
     <section class="features" id="fitur">
         <div class="section-header">
-            <span class="section-badge">Mengapa Memilih Kami</span>
+            <div class="section-label">Mengapa Memilih Kami</div>
             <h2 class="section-title">Keunggulan Hijrah Travel</h2>
-            <p class="section-subtitle">Kami berkomitmen memberikan layanan terbaik untuk perjalanan spiritual Anda</p>
+            <p class="section-sub">Kami berkomitmen memberikan layanan terbaik untuk perjalanan spiritual Anda</p>
         </div>
         <div class="features-grid">
-            <div class="feature-card" data-aos="fade-up">
-                <div class="feature-icon">🛡️</div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
                 <h3>Berlisensi Resmi</h3>
-                <p>Terdaftar dan diawasi oleh Kementerian Agama Republik Indonesia dengan izin perjalanan wisata halal yang valid</p>
+                <p>Terdaftar dan diawasi oleh Kementerian Agama Republik Indonesia dengan izin perjalanan wisata halal yang valid.</p>
             </div>
-            <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="feature-icon">👨‍🏫</div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
                 <h3>Guide Berpengalaman</h3>
-                <p>Tim guide muslim profesional yang hafal Al-Quran dan memahami ilmu tafsir serta sirah nabawi</p>
+                <p>Tim guide muslim profesional yang memahami ilmu tafsir dan sirah nabawi untuk membimbing ibadah Anda.</p>
             </div>
-            <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="feature-icon">🏨</div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                </div>
                 <h3>Hotel Bintang 4-5</h3>
-                <p>Penginapan strategis dekat Masjidil Haram dan Nabawi dengan fasilitas lengkap dan layanan prima</p>
+                <p>Penginapan strategis dekat Masjidil Haram dan Nabawi dengan fasilitas lengkap dan layanan prima.</p>
             </div>
-            <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
-                <div class="feature-icon">✈️</div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </div>
                 <h3>Penerbangan Langsung</h3>
-                <p>Maskapai terpercaya dengan rute langsung Jakarta-Mekah untuk kenyamanan selama perjalanan</p>
+                <p>Maskapai terpercaya dengan rute langsung Jakarta-Mekah untuk kenyamanan selama perjalanan.</p>
             </div>
-            <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
-                <div class="feature-icon">🍽️</div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                </div>
                 <h3>Makanan Halal 100%</h3>
-                <p>Restoran halal tersertifikasi dengan menu Indonesia yang menggugah selera dan memperhatikan dietary</p>
+                <p>Restoran halal tersertifikasi dengan menu Indonesia yang menggugah selera dan memperhatikan dietary.</p>
             </div>
-            <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
-                <div class="feature-icon">📱</div>
-                <h3>24/7 Support</h3>
-                <p>Tim customer service yang siap membantu Anda sebelum, selama, dan setelah perjalanan</p>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                </div>
+                <h3>Support 24/7</h3>
+                <p>Tim customer service yang siap membantu Anda sebelum, selama, dan setelah perjalanan.</p>
             </div>
         </div>
     </section>
@@ -989,19 +1059,18 @@
     <!-- PACKAGES -->
     <section class="packages" id="paket">
         <div class="section-header">
-            <span class="section-badge">Paket Pilihan</span>
+            <div class="section-label">Paket Pilihan</div>
             <h2 class="section-title">Paket Umroh Kami</h2>
-            <p class="section-subtitle">Pilih paket yang sesuai dengan kebutuhan dan budget Anda</p>
+            <p class="section-sub">Pilih paket yang sesuai dengan kebutuhan dan budget Anda</p>
         </div>
         <div class="packages-grid">
-            <!-- Package 1 -->
             <div class="package-card">
                 <div class="package-header">
                     <p class="package-type">Best Value</p>
                     <h3 class="package-name">Umroh Reguler</h3>
                     <div class="package-price">
                         <p class="price-from">Mulai dari</p>
-                        <p class="price-value">Rp 28.5 JT</p>
+                        <p class="price-value">Rp 28,5 JT</p>
                     </div>
                 </div>
                 <div class="package-body">
@@ -1015,19 +1084,18 @@
                         <li>Manasik Umroh</li>
                         <li>Asuransi Perjalanan</li>
                     </ul>
-                    <a href="#kontak" class="btn btn-primary">Pilih Paket</a>
+                    <a href="#kontak" class="btn btn-outline" style="border-color: var(--primary); color: var(--primary);">Pilih Paket</a>
                 </div>
             </div>
 
-            <!-- Package 2 - Featured -->
             <div class="package-card featured">
-                <span class="package-badge">TERLARIS</span>
+                <span class="package-badge">Terlaris</span>
                 <div class="package-header">
                     <p class="package-type">Most Popular</p>
                     <h3 class="package-name">Umroh Premium</h3>
                     <div class="package-price">
                         <p class="price-from">Mulai dari</p>
-                        <p class="price-value">Rp 38.5 JT</p>
+                        <p class="price-value">Rp 38,5 JT</p>
                     </div>
                 </div>
                 <div class="package-body">
@@ -1042,11 +1110,10 @@
                         <li>Asuransi Premium + Baggage</li>
                         <li>Free Ziyarah Tours</li>
                     </ul>
-                    <a href="#kontak" class="btn btn-gold">Pilih Paket</a>
+                    <a href="#kontak" class="btn btn-primary">Pilih Paket</a>
                 </div>
             </div>
 
-            <!-- Package 3 -->
             <div class="package-card">
                 <div class="package-header">
                     <p class="package-type">VIP Exclusive</p>
@@ -1068,7 +1135,7 @@
                         <li>Full Insurance Premium</li>
                         <li>Exclusive Gift Package</li>
                     </ul>
-                    <a href="#kontak" class="btn btn-primary">Pilih Paket</a>
+                    <a href="#kontak" class="btn btn-outline" style="border-color: var(--primary); color: var(--primary);">Pilih Paket</a>
                 </div>
             </div>
         </div>
@@ -1077,34 +1144,26 @@
     <!-- GALLERY -->
     <section class="gallery" id="galeri">
         <div class="section-header">
-            <span class="section-badge">Galeri Kami</span>
+            <div class="section-label">Galeri Kami</div>
             <h2 class="section-title">Momen Perjalanan Jemaah</h2>
-            <p class="section-subtitle">Dokumentasi perjalanan umroh bersama Hijrah Travel</p>
+            <p class="section-sub">Dokumentasi perjalanan umroh bersama Hijrah Travel</p>
         </div>
         <div class="gallery-grid">
             <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?w=600&q=80" alt="Masjidil Haram" loading="lazy">
-                <div class="overlay">
-                    <p>🕋 Masjidil Haram, Mekkah</p>
-                </div>
+                <img src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?w=600&q=80" alt="Masjidil Haram Mekkah" loading="lazy">
+                <div class="overlay">Masjidil Haram, Mekkah</div>
             </div>
             <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1542816417-0983c9c9ad53?w=600&q=80" alt="Masjid Nabawi" loading="lazy">
-                <div class="overlay">
-                    <p>🕌 Masjid Nabawi, Madinah</p>
-                </div>
+                <img src="https://images.unsplash.com/photo-1542816417-0983c9c9ad53?w=600&q=80" alt="Masjid Nabawi Madinah" loading="lazy">
+                <div class="overlay">Masjid Nabawi, Madinah</div>
             </div>
             <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1564769625905-50e93615e769?w=600&q=80" alt="Jemaah" loading="lazy">
-                <div class="overlay">
-                    <p>👥 Sesi Foto Bersama Jemaah</p>
-                </div>
+                <img src="https://images.unsplash.com/photo-1564769625905-50e93615e769?w=600&q=80" alt="Sesi Foto Jemaah" loading="lazy">
+                <div class="overlay">Sesi Foto Bersama Jemaah</div>
             </div>
             <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1580418827493-f2b22c0a76cb?w=600&q=80" alt="Arafah" loading="lazy">
-                <div class="overlay">
-                    <p>⛰️ Padang Arafah</p>
-                </div>
+                <img src="https://images.unsplash.com/photo-1580418827493-f2b22c0a76cb?w=600&q=80" alt="Padang Arafah" loading="lazy">
+                <div class="overlay">Padang Arafah</div>
             </div>
         </div>
     </section>
@@ -1112,13 +1171,13 @@
     <!-- TESTIMONIALS -->
     <section class="testimonials" id="testimoni">
         <div class="section-header">
-            <span class="section-badge">Testimoni</span>
+            <div class="section-label">Testimoni</div>
             <h2 class="section-title">Apa Kata Jemaah Kami</h2>
-            <p class="section-subtitle">Cerita nyata dari jemaah yang telah merasakan layanan kami</p>
+            <p class="section-sub">Cerita nyata dari jemaah yang telah merasakan layanan kami</p>
         </div>
         <div class="testimonials-grid">
             <div class="testimonial-card">
-                <div class="testimonial-stars">★★★★★</div>
+                <div class="testimonial-stars">*****</div>
                 <p class="testimonial-text">"Alhamdulillah, perjalanan umroh bersama Hijrah Travel sangat lancar. Hotelnya dekat banget sama Masjidil Haram, makanannya enak dan halal. Guidnya juga sabar banget ngajarin kami cara ibadah yang benar."</p>
                 <div class="testimonial-author">
                     <div class="author-avatar">AS</div>
@@ -1129,7 +1188,7 @@
                 </div>
             </div>
             <div class="testimonial-card">
-                <div class="testimonial-stars">★★★★★</div>
+                <div class="testimonial-stars">*****</div>
                 <p class="testimonial-text">"Pertama kali umroh dan langsung dapat pengalaman terbaik. Timnya sangat responsif dari awal konsultasi sampai pulang. Ibadahnya jadi lebih khusyuk karena semua udah diurus dengan rapi."</p>
                 <div class="testimonial-author">
                     <div class="author-avatar">FS</div>
@@ -1140,8 +1199,8 @@
                 </div>
             </div>
             <div class="testimonial-card">
-                <div class="testimonial-stars">★★★★★</div>
-                <p class="testimonial-text">"Sudah 3x umroh pakai Hijrah Travel dan tidak pernah kecewa. Fasilitasnya konsisten bagus, itinerario jelas, dan yang paling penting bisa khusyuk beribadah tanpa khawatir soal logistics."</p>
+                <div class="testimonial-stars">*****</div>
+                <p class="testimonial-text">"Sudah 3x umroh pakai Hijrah Travel dan tidak pernah kecewa. Fasilitasnya konsisten bagus, itinerary jelas, dan yang paling penting bisa khusyuk beribadah tanpa khawatir soal logistics."</p>
                 <div class="testimonial-author">
                     <div class="author-avatar">HR</div>
                     <div class="author-info">
@@ -1156,52 +1215,52 @@
     <!-- FAQ -->
     <section class="faq" id="faq">
         <div class="section-header">
-            <span class="section-badge">FAQ</span>
+            <div class="section-label">FAQ</div>
             <h2 class="section-title">Pertanyaan Umum</h2>
-            <p class="section-subtitle">Jawaban untuk pertanyaan yang sering diajukan</p>
+            <p class="section-sub">Jawaban untuk pertanyaan yang sering diajukan</p>
         </div>
         <div class="faq-list">
             <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
+                <button class="faq-question" onclick="toggleFaq(this)">
                     <span>Berapa lama proses pengurusan visa umroh?</span>
-                    <span>+</span>
-                </div>
+                    <span class="faq-toggle">+</span>
+                </button>
                 <div class="faq-answer">
                     Proses pengurusan visa umroh biasanya membutuhkan waktu 7-14 hari kerja setelah seluruh dokumen lengkap diajukan. Untuk musim liburan, kami sarankan untuk mengajukan visa minimal 1 bulan sebelum keberangkatan.
                 </div>
             </div>
             <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
+                <button class="faq-question" onclick="toggleFaq(this)">
                     <span>Apa saja dokumen yang dibutuhkan untuk umroh?</span>
-                    <span>+</span>
-                </div>
+                    <span class="faq-toggle">+</span>
+                </button>
                 <div class="faq-answer">
-                    Dokumen yang dibutuhkan meliputi: passport asli dengan masa berlaku minimal 7 bulan, foto copy KTP, foto copy KK, foto ukuran 4x6 dengan latar belakang putih (2 lembar), dan kuningas vaccination meningitis.
+                    Dokumen yang dibutuhkan meliputi: passport asli dengan masa berlaku minimal 7 bulan, foto copy KTP, foto copy KK, foto ukuran 4x6 dengan latar belakang putih (2 lembar), dan sertifikat vaksin meningitis.
                 </div>
             </div>
             <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
+                <button class="faq-question" onclick="toggleFaq(this)">
                     <span>Apakah bisa cicilan pembayaran?</span>
-                    <span>+</span>
-                </div>
+                    <span class="faq-toggle">+</span>
+                </button>
                 <div class="faq-answer">
                     Ya, kami menyediakan opsi pembayaran cicilan hingga 6 bulan tanpa bunga. Pembayaran bisa dilakukan melalui transfer bank, credit card, atau datang langsung ke kantor kami.
                 </div>
             </div>
             <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
-                    <span>Apa itu vaccination meningitis?</span>
-                    <span>+</span>
-                </div>
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span>Apa itu vaksin meningitis?</span>
+                    <span class="faq-toggle">+</span>
+                </button>
                 <div class="faq-answer">
-                    Vaccination meningitis adalah vaccin yang diwajibkan oleh Pemerintah Arab Saudi untuk semua pendatang. Vaccin ini melindungi dari penyakit meningitis dan berlaku 3 tahun. Vaccin bisa diperoleh di kantor kesehatan pelabuhan atau rumah sakit terdekat.
+                    Vaksin meningitis adalah yang diwajibkan oleh Pemerintah Arab Saudi untuk semua pendatang. Vaksin ini melindungi dari penyakit meningitis dan berlaku 3 tahun. Vaksin bisa diperoleh di kantor kesehatan pelabuhan atau rumah sakit terdekat.
                 </div>
             </div>
             <div class="faq-item">
-                <div class="faq-question" onclick="toggleFaq(this)">
+                <button class="faq-question" onclick="toggleFaq(this)">
                     <span>Bagaimana jika saya batal pergi?</span>
-                    <span>+</span>
-                </div>
+                    <span class="faq-toggle">+</span>
+                </button>
                 <div class="faq-answer">
                     Jika pembatalan dilakukan lebih dari 30 hari sebelum keberangkatan, kami akan mengembalikan dana sesuai dengan kebijakan refund yang telah disepakati. Biaya administrasi mungkin berlaku sesuai ketentuan.
                 </div>
@@ -1213,9 +1272,9 @@
     <section class="cta" id="kontak">
         <h2>Siap Melanjutkan Perjalanan Spiritual Anda?</h2>
         <p>Hubungi kami sekarang untuk konsultasi gratis dan dapatkan penawaran terbaik untuk perjalanan umroh Anda</p>
-        <div class="hero-buttons">
-            <a href="https://wa.me/6281234567890" class="btn btn-gold" target="_blank">📱 WhatsApp: 0812-3456-7890</a>
-            <a href="tel:+622112345678" class="btn btn-outline">📞 Telepon: 021-1234-5678</a>
+        <div class="hero-actions">
+            <a href="https://wa.me/6281234567890" class="btn btn-primary" target="_blank" rel="noopener">WhatsApp: 0812-3456-7890</a>
+            <a href="tel:+622112345678" class="btn btn-outline">Telepon: 021-1234-5678</a>
         </div>
     </section>
 
@@ -1223,16 +1282,18 @@
     <footer class="footer">
         <div class="footer-grid">
             <div class="footer-brand">
-                <div class="logo">
-                    <div class="logo-icon">🕋</div>
-                    Hijrah Travel
-                </div>
-                <p>Melayani perjalanan umroh dan haji dengan penuh amanah dan profesionalisme sejak 2015. Memberangkatkan mimpi ibadah Anda dengan layanan terbaik.</p>
+                <a href="#beranda" class="logo">
+                    <div class="logo-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L2 8v12h20V8L12 2z"/><path d="M12 6v14M7 10v6M17 10v6"/></svg>
+                    </div>
+                    <span class="logo-text">Hijrah Travel</span>
+                </a>
+                <p>Melayani perjalanan umroh dan haji dengan penuh amanah dan profesionalisme sejak 2015.</p>
                 <div class="footer-social">
-                    <a href="#" aria-label="Instagram">📷</a>
-                    <a href="#" aria-label="Facebook">📘</a>
-                    <a href="#" aria-label="YouTube">🎬</a>
-                    <a href="#" aria-label="TikTok">🎵</a>
+                    <a href="#" aria-label="Instagram">IG</a>
+                    <a href="#" aria-label="Facebook">FB</a>
+                    <a href="#" aria-label="YouTube">YT</a>
+                    <a href="#" aria-label="TikTok">TK</a>
                 </div>
             </div>
             <div class="footer-links">
@@ -1257,64 +1318,61 @@
             </div>
             <div class="footer-contact">
                 <h4>Hubungi Kami</h4>
-                <p>📍 Jl. Sudirman No. 123, Jakarta Pusat</p>
-                <p>📞 021-1234-5678</p>
-                <p>📱 0812-3456-7890 (WhatsApp)</p>
-                <p>✉️ info@hijrahtravel.co.id</p>
-                <p>🕐 Senin - Sabtu: 08:00 - 17:00 WIB</p>
+                <p>Jl. Sudirman No. 123, Jakarta Pusat</p>
+                <p>021-1234-5678</p>
+                <p>0812-3456-7890 (WhatsApp)</p>
+                <p>info@hijrahtravel.co.id</p>
+                <p>Senin - Sabtu: 08:00 - 17:00 WIB</p>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>© 2025 Hijrah Travel. Seluruh hak dilindungi. | PT Hijrah Tour & Travel | IUPT No. 123/IV/2015</p>
+            <p>2025 Hijrah Travel. Seluruh hak dilindungi. | PT Hijrah Tour & Travel | IUPT No. 123/IV/2015</p>
         </div>
     </footer>
 
     <!-- WHATSAPP FLOAT -->
-    <a href="https://wa.me/6281234567890" class="whatsapp-float" target="_blank" aria-label="Chat WhatsApp">
-        💬
+    <a href="https://wa.me/6281234567890" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat WhatsApp">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     </a>
 
-    <!-- SCRIPTS -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Initialize AOS
-        AOS.init({
-            duration: 800,
-            easing: 'ease-out',
-            once: true
-        });
-
-        // Navbar scroll effect
+        // Navbar scroll
         window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
+            document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
         });
 
-        // Mobile nav toggle
-        function toggleMobileNav() {
-            document.getElementById('mobileNav').classList.toggle('active');
+        // Mobile nav
+        document.getElementById('hamburgerBtn').addEventListener('click', function() {
+            document.getElementById('mobileNav').classList.add('active');
+        });
+
+        document.getElementById('mobileNavClose').addEventListener('click', closeMobileNav);
+
+        function closeMobileNav() {
+            document.getElementById('mobileNav').classList.remove('active');
         }
 
-        // FAQ toggle
-        function toggleFaq(element) {
-            const item = element.parentElement;
-            item.classList.toggle('active');
+        // FAQ
+        function toggleFaq(btn) {
+            const item = btn.parentElement;
+            const isActive = item.classList.contains('active');
+            
+            document.querySelectorAll('.faq-item').forEach(function(el) {
+                el.classList.remove('active');
+            });
+
+            if (!isActive) {
+                item.classList.add('active');
+            }
         }
 
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
         });
