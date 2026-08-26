@@ -745,6 +745,126 @@
             padding-bottom: 20px;
         }
 
+        /* CONTACT PERSON */
+        .contact-person {
+            background: var(--gray-light);
+        }
+
+        .contact-person-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .contact-person-photo {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 16px 40px rgba(0,0,0,0.15);
+        }
+
+        .contact-person-photo img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            aspect-ratio: 3/4;
+        }
+
+        .contact-person-info {
+            text-align: left;
+        }
+
+        .contact-person-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--dark);
+            margin: 8px 0 6px;
+            font-weight: 700;
+        }
+
+        .contact-person-role {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.02em;
+            margin-bottom: 18px;
+        }
+
+        .contact-person-desc {
+            color: var(--text-muted);
+            font-size: 0.98rem;
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .contact-person-channels {
+            list-style: none;
+            display: grid;
+            gap: 12px;
+        }
+
+        .contact-person-channels li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--text);
+            font-size: 0.95rem;
+        }
+
+        .channel-icon {
+            width: 38px;
+            height: 38px;
+            background: rgba(11,93,52,0.08);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .channel-icon svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--primary);
+            fill: none;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .contact-person-channels a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-person-channels a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .contact-person-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .contact-person-photo {
+                max-width: 420px;
+                margin: 0 auto;
+            }
+
+            .contact-person-info {
+                text-align: center;
+            }
+
+            .contact-person-channels li {
+                justify-content: center;
+            }
+        }
+
         /* CTA */
         .cta {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
@@ -1281,8 +1401,47 @@
         </div>
     </section>
 
+    <!-- CONTACT PERSON -->
+    <section class="contact-person" id="kontak">
+        <div class="section-header">
+            <div class="section-label">Contact Person</div>
+            <h2 class="section-title">Bicara Langsung dengan Kami</h2>
+            <p class="section-sub">Konsultasikan perjalanan umroh Anda langsung dengan tim kami</p>
+        </div>
+        <div class="contact-person-grid">
+            <div class="contact-person-photo">
+                <img src="images/kontak-person.jpg" alt="Contact Person Hijrah Travel" loading="lazy">
+            </div>
+            <div class="contact-person-info">
+                <h3 class="contact-person-name">Ahmad Fauzi</h3>
+                <p class="contact-person-role">Travel Consultant</p>
+                <p class="contact-person-desc">Siap membantu Anda memilih paket umroh yang tepat, menjawab pertanyaan seputar perjalanan, dan memandu proses pendaftaran dari awal hingga Anda tiba di Tanah Suci.</p>
+                <ul class="contact-person-channels">
+                    <li>
+                        <div class="channel-icon">
+                            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        </div>
+                        <span>WhatsApp</span> <a href="https://wa.me/6281234567890" target="_blank" rel="noopener">0812-3456-7890</a>
+                    </li>
+                    <li>
+                        <div class="channel-icon">
+                            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        </div>
+                        <span>Telepon</span> <a href="tel:+622112345678">021-1234-5678</a>
+                    </li>
+                    <li>
+                        <div class="channel-icon">
+                            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </div>
+                        <span>Email</span> <a href="mailto:ahmad@hijrahtravel.co.id">ahmad@hijrahtravel.co.id</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA -->
-    <section class="cta" id="kontak">
+    <section class="cta" id="pemesanan">
         <h2>Siap Melanjutkan Perjalanan Spiritual Anda?</h2>
         <p>Hubungi kami sekarang untuk konsultasi gratis dan dapatkan penawaran terbaik untuk perjalanan umroh Anda</p>
         <div class="hero-actions">
